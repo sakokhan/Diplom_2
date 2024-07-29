@@ -109,7 +109,7 @@ public class ChangingUserDataTest {
         userClient.logOut(expiredToken);
         userClient.changeUser(user1, expiredToken).then().statusCode(SC_UNAUTHORIZED).and().body("success",
                 equalTo(false), "message", equalTo("You should be authorised"));
-        Assert.assertNotSame(user1.toString(), user.getEmail().toString());
+        Assert.assertNotSame(user1.toString(), user.getEmail());
     }
     @Test
     @DisplayName("Изменение данных")
@@ -124,7 +124,7 @@ public class ChangingUserDataTest {
         userClient.logOut(expiredToken);
         userClient.changeUser(user1, expiredToken).then().statusCode(SC_UNAUTHORIZED).and().body("success",
                 equalTo(false), "message", equalTo("You should be authorised"));
-        Assert.assertNotSame(user1.toString(), user.getPassword().toString());
+        Assert.assertNotSame(user1.toString(), user.getPassword());
     }
     @Test
     @DisplayName("Изменение данных")
@@ -139,7 +139,7 @@ public class ChangingUserDataTest {
         userClient.logOut(expiredToken);
         userClient.changeUser(user1, expiredToken).then().statusCode(SC_UNAUTHORIZED).and().body("success",
                 equalTo(false), "message", equalTo("You should be authorised"));
-        Assert.assertNotSame(user1.toString(), user.getName().toString());
+        Assert.assertNotSame(user1.toString(), user.getName());
     }
     @After
     public void tearDown(){userClient.deleteUser(user, token);}

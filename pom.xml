@@ -70,15 +70,8 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
             <version>5.5.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-path</artifactId>
-            <version>5.5.0</version>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>

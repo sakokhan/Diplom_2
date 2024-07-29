@@ -19,8 +19,8 @@ import static utils.Utils.randomString;
 public class OrderCreateTest{
     private TokenResponse tokenResponse;
     private  String token;
-    private Response response;
     private Response authResponse;
+    private Response response;
     private OrderClient orderClient;
     private UserClient userClient;
     private User user;
@@ -63,5 +63,4 @@ public class OrderCreateTest{
     public void createOrderBadIngredient(){
         orderClient.orders(orderClient.body(randomString(20))).then().statusCode(SC_INTERNAL_SERVER_ERROR);
     }
-
 }

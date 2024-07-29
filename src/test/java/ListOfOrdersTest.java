@@ -14,13 +14,12 @@ import static models.UserCreator.randomUserAllData;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.notNullValue;
 import static user.UserClient.BASE_URL;
 
 public class ListOfOrdersTest {
     private TokenResponse tokenResponse;
-    private  String token;
     private Response response;
+    private  String token;
     private Response authResponse;
     private OrderClient orderClient;
     private UserClient userClient;
@@ -34,7 +33,7 @@ public class ListOfOrdersTest {
     @Step
     public String getAccessToken(){
         user = randomUserAllData();
-        response = userClient.regUser(user);
+        response= userClient.regUser(user);
         authResponse = userClient.authUser(user);
         tokenResponse = authResponse.as(TokenResponse.class);
         return token = tokenResponse.getAccessToken();
