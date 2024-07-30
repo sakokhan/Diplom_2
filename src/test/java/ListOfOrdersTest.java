@@ -18,7 +18,6 @@ import static user.UserClient.BASE_URL;
 
 public class ListOfOrdersTest {
     private TokenResponse tokenResponse;
-    private Response response;
     private  String token;
     private Response authResponse;
     private OrderClient orderClient;
@@ -33,7 +32,7 @@ public class ListOfOrdersTest {
     @Step
     public String getAccessToken(){
         user = randomUserAllData();
-        response= userClient.regUser(user);
+        userClient.regUser(user);
         authResponse = userClient.authUser(user);
         tokenResponse = authResponse.as(TokenResponse.class);
         return token = tokenResponse.getAccessToken();
@@ -41,7 +40,7 @@ public class ListOfOrdersTest {
     @Step
     public String getRefreshToken(){
         user = randomUserAllData();
-        response = userClient.regUser(user);
+        userClient.regUser(user);
         authResponse = userClient.authUser(user);
         tokenResponse = authResponse.as(TokenResponse.class);
         return token = tokenResponse.getRefreshToken();
